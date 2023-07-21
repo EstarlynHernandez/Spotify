@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/search/{value?}', [HomeController::class, 'search'])->name('search');
+Route::get('/playlist/{id}', [HomeController::class, 'show'])->name('playlist.show');
 Route::get('/app', [HomeController::class, 'app'])->name('getapp');

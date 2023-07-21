@@ -5,17 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Song;
 use App\Models\Gender;
+use App\Models\Playlist;
 
 class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $songs = Song::all()->take(30);
+        $request->session()->put('like', [1, 108, 19]);
+        $playlists = Playlist::all();
         $page = 'home';
-        return view('home/index', compact('songs', 'page'));
+        return view('home/index', compact('playlists', 'page'));
     }
 
     public function app()
@@ -23,7 +25,7 @@ class HomeController extends Controller
         $page = 'app';
         return view('home/app', compact('page'));
     }
-    
+
     public function search()
     {
         $page = 'search';
@@ -49,9 +51,18 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(int $id)
     {
-        //
+        if (isset($id) && is_numeric($id)) {
+            $playlist = Playlist::find($id);
+            $songsPlaylists = $playlist->songsPlaylists()->get();
+            $songs = [];
+            foreach ($songsPlaylists as $songsPlaylist) {
+                $songs[] = $songsPlaylist->song()->first();
+            }
+        }
+
+        return view('playlist/index', compact('playlist', 'songs'));
     }
 
     /**

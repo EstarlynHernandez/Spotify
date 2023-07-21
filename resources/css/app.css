@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-2xs {
+  font-size: 0.55rem;
+}
+
+.text-3xs {
+  font-size: 0.45rem;
+}
+
+.text-4xs {
+  font-size: 0.35rem;
+}
+
+@media screen and (min-width:640px) {
+  .grid-col {
+    grid-template-columns: 1fr 6fr 6fr 6fr 2fr;
+  }
+}
