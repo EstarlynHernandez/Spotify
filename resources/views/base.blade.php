@@ -33,7 +33,7 @@
                     </div>
                     <div class="flex gap-2">
                         <picture>
-                            <img class='max-h-10 rounded' src="{{ asset('imgs/1.jpeg') }}" alt="Song Image">
+                            <img class='max-h-10 rounded' src="{{ asset('imgs/1.webp') }}" alt="Song Image">
                         </picture>
                         <div>
                             <h4 class="text-xs text-white font-bold songTitle">Song Name</h4>
@@ -138,7 +138,7 @@
             </picture>
         </div>
         <picture>
-            <img src="{{ asset('imgs/1.jpeg') }}" alt="">
+            <img src="{{ asset('imgs/1.webp') }}" alt="">
         </picture>
         {{-- controllers and info --}}
         <div>

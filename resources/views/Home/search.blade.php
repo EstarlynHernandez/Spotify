@@ -20,7 +20,7 @@
                     class="bg-yellow-900 p-4 h-20 overflow-hidden relative rounded sm:w-32 sm:h-32 flex-none">
                     <h3 class="text-white w-4/5">{{ substr(fake()->name(), 0, 15) }}</h3>
                     <img class=" w-20 absolute -right-5 top-8 rotate-45 sm:top-1/2"
-                        src="{{ asset('imgs/' . random_int(1, 36) . '.jpeg') }}" alt="Image">
+                        src="{{ asset('imgs/' . random_int(1, 36) . '.webp') }}" alt="Image">
                 </div>
             @endfor
         </div>

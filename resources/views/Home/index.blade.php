@@ -14,12 +14,12 @@
         @for ($i = 0; $i < 1; $i++)
             <div class="p-6 sm:p-2">
                 <h2 class="text-xl text-white font-bold mb-4">{{ fake()->name() }}</h2>
-                <div class="flex overflow-scroll sm:overflow-hidden sm:flex flex-wrap gap-2 items-center">
+                <div class="flex overflow-scroll sm:overflow-hidden sm:flex-wrap gap-2 items-center">
                     @foreach ($playlists->random(6) as $playlist)
                         <a href="{{ route('playlist.show', ['id' => $playlist->id]) }}"
                             class="flex-none w-40 hover:bg-white/30 p-2 rounded cursor-pointer sm:flex sm:w-48 sm:bg-white/10 sm:gap-2">
                             <picture>
-                                <img src="{{ 'imgs/' . random_int(1, 36) . '.jpeg' }}" alt="Music Image"
+                                <img src="{{ 'imgs/' . random_int(1, 36) . '.webp' }}" alt="Music Image"
                                     class='w-40 rounded sm:w-8'>
                             </picture>
                             <div class="mt-2 sm:mt-0">
@@ -38,7 +38,7 @@
                         <a href="{{ route('playlist.show', ['id' => $playlist->id]) }}"
                             class="flex-none w-40 hover:bg-white/10 p-2 rounded cursor-pointer sm:w-28 transition-all duration-500 sm:mb-4">
                             <picture>
-                                <img src="{{ 'imgs/' . random_int(1, 36) . '.jpeg' }}" alt="Music Image"
+                                <img src="{{ 'imgs/' . random_int(1, 36) . '.webp' }}" alt="Music Image"
                                     class='w-40 sm:w-24 rounded'>
                             </picture>
                             <div class="mt-2 sm:w-24">

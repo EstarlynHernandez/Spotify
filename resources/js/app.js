@@ -29,7 +29,7 @@ function song() {
     let prev = document.querySelectorAll('.prevSong');
     let songPosition = document.querySelectorAll('.songPosition');
     let interval;
-    
+
     playPause.forEach((p) => {
         p.onclick = (e) => {
             e.stopPropagation();
@@ -71,6 +71,7 @@ function song() {
         let oldsong = document.querySelector('.songs.text-green-500');
         if (oldsong) {
             oldsong.classList.remove('text-green-500');
+            oldsong.classList.add('text-white');
         }
 
         if (audio.getAttribute('like')) {
@@ -83,7 +84,8 @@ function song() {
             })
         }
 
-        audio.classList.add('text-green-500')
+        audio.classList.add('text-green-500');
+        audio.classList.remove('text-white');
 
         titles.forEach((title) => {
             title.innerText = audio.innerText;
@@ -118,7 +120,7 @@ function song() {
     prev.forEach((pre) => {
         pre.onclick = () => {
             let currentPos = Array.from(songs).findIndex((i) => i.id === song.getAttribute('value'));
-            if (currentPos != 0) {
+            if (currentPos != 0 && songs.length > 1) {
                 play(songs[currentPos - 1]);
                 next.forEach((nex) => {
                     nex.classList.remove('opacity-50')

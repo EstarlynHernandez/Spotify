@@ -12,14 +12,14 @@
                 </a>
             </div>
             <div class="sm:flex sm:gap-4 sm:mt-24 sm:px-6 ">
-                <img src="{{ asset('imgs/' . random_int(1, 36) . '.jpeg') }}" alt="Album Image" class="w-40 m-auto">
+                <img src="{{ asset('imgs/' . random_int(1, 36) . '.webp') }}" alt="Album Image" class="w-40 m-auto">
                 <div>
                     <h2 class="text-white text-4xl mt-4 font-bold">{{ $playlist->title }}</h2>
                     <p class="text-white/70 mt-4 sm:hidden"><span class="text-white">Artist 1</span> and <span
                             class="text-white">Artist
                             2</span></p>
                     <div class="flex gap-4 items-center mt-4">
-                        <img src="{{ asset('imgs/' . random_int(1, 36) . '.jpeg') }}" alt="User"
+                        <img src="{{ asset('imgs/' . random_int(1, 36) . '.webp') }}" alt="User"
                             class="w-10 rounded-full sm:hidden">
                         <p class="text-white sm:text-xs">{{ fake()->name() }} <span class="hidden sm:inline"> .
                                 {{ count($songs) }} tracks</span></p>
